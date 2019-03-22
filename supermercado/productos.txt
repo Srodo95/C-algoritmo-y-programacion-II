@@ -1,0 +1,5 @@
+harina 1351224512121 25 1 (castearlo a booleano)
+cafe 1352112541512 80 0
+chocolate 1346648745451 50 1
+arroz 1344457854512 15 false
+azucar 
