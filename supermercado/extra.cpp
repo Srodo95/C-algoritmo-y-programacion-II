@@ -10,6 +10,23 @@ typedef struct Producto{
 	bool oferta;
 }Producto;
 
+Producto pedir_nuevo_producto(Producto vector_origen[]){
+	Producto nuevo_producto;
+	cout<<"que producto desea cargar?"<<endl;
+	cout<<"Nombre:"<<endl;
+	cin>>nombre;
+	cout<<"Codigo de barra:"<<endl;
+	cin>>codigo;
+	cout<<"Precio:"<<endl;
+	cin>>precio;
+	cout<<"tiene oferta? s/n"<<endl;
+	cin>>oferta;
+	nuevo_producto.nombre = nombre;
+	nuevo_producto.codigo = codigo;
+	nuevo_producto.precio = precio;
+	nuevo_producto.oferta = oferta;
+	return nuevo_producto;
+}
 
 //cargar_productos(archivo,gondola);
 //agregar_producto(nombre,gondola);
@@ -28,31 +45,34 @@ int main(){
 	int posicion = 0;
 	int i;
 	int contador_ofertas;
+	
+	//opcion 1:
 	string nombre;
 	int codigo;
+	int precio;
+	bool oferta;
 	bool encontre;
 	
 	while(opcion!=8){
 		cout<<"1. Cargar productos en el vector."<<endl;
 		cout<<"2. Buscar un producto indicando su nombre."<<endl;
-		cout<<"3. Buscar un producto por código de barra."<<endl;
-		cout<<"4. Poder modificar el precio de algún producto."<<endl;
-		cout<<"5. Quitar un producto que esté en el vector."<<endl;
+		cout<<"3. Buscar un producto por cÃ³digo de barra."<<endl;
+		cout<<"4. Poder modificar el precio de algÃºn producto."<<endl;
+		cout<<"5. Quitar un producto que estÃ© en el vector."<<endl;
 		cout<<"6. Indicar la cantidad de productos en oferta."<<endl; 
 		cout<<"7. Cargar productos de Gondola en un nuevo vector Chango, indicando: monto a abonar y ahorro total teniendo en cuenta los productos en oferta."<<endl;
 		cout<<"8. Salir"<<endl;
 		cin>>opcion;
 		if(opcion==1){
 			cout<<"que producto desea cargar?"<<endl;
-			cin>>nombre;
-			//chango[posicion]=agregar_producto(nombre,gondola);
+			gondola[posicion]=pedir_nuevo_producto();
 			posicion++;
 			cout<<"desea cargar otro producto? s/n"<<endl;
 			cin>>opcion_respuesta;
 			while(opcion_respuesta!='n'){
-				cout<<"que producto desea cargar?"<<endl;
-				cin>>nombre;
-				//chango[posicion]=agregar_producto(nombre,gondola);
+				gondola[posicion]=pedir_nuevo_producto();
+				posicion++;
+				
 				cout<<"desea cargar otro producto? s/n"<<endl;
 				cin>>opcion_respuesta;
 			}
