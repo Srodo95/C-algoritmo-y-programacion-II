@@ -3,6 +3,19 @@
 #include <string>
 #include "supermercado.h"
 
+/*ejemplo del archivo de texto que utilizo para este ejercicio:
+harina 10001012111 25 0
+azucar 25888741533 140 1
+cafe 111088841122 130 0
+arroz 113311331122 20 0
+.
+.
+.
+
+
+la oferta luego se casteaba a booleano
+*/
+
 Producto pedir_nuevo_producto(){
 	string nombre,codigo;
 	int precio;
@@ -71,8 +84,6 @@ void imprimir_oferta(Producto vector[],int pos){
 		cout<<"Oferta: no"<<endl;
 	}
 }
-//cargar_productos(archivo,gondola);
-//agregar_producto(nombre,gondola);
 
 int main(){
 	
