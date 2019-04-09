@@ -24,28 +24,6 @@ const float PI = 3.14159;
 
 using namespace std;
 
-void leer_archivo_sonido(fstream nombre_archivo){
-	ofstream archivo(nombre_archivo,ios::binary);
-	
-	if(archivo.is_open()){
-		//archivo.write(reinterpret_cast<char *>(&riff),sizeof(char))*4);
-		for(i=0;i<3;i++){
-			arhivo.put(riff[i]);
-		}
-		
-		for(i=0;i<2;i++){
-			arhivo.put(fmt[i]);
-		}
-		
-		for(i=0;i<3;i++){
-			arhivo.put(wave[i]);
-		}
-		
-		
-		
-	}
-}
-
 bool es_sostenido(string tono){
 	for(int i=0;i<tono.length();i++){
 		if(tono[i]=='#' || tono[i]=='b'){
@@ -95,36 +73,31 @@ int calcular_distancia_tonos(string tono){
 
 double encontrar_frecuencia(string tono){
 	double numero = 0.083333;   //raiz doceava de 2
-	
-	double frecuencia=440*pow(pow(2,numero),(double)calcular_distancia_tonos(tono));
+	double frecuencia;
+	if(tono[0]!='H'){
+		frecuencia=LA_CENTRAL*pow(pow(2,numero),(double)calcular_distancia_tonos(tono));
+	}else{
+		frecuencia=0;
+	}
 	return frecuencia;
 }
 
-/*
-1' parametro : archivo a leer
-2' parametro : archivo wav a crear
-3' parametro : representacion de cada muestra (8,16 o 32 bits); 
-4' parametro : cantidad de muestras por segundo >=8000
-*/
-
-/*0 - 3 "RIFF" 
-4 - 7 Tamaño del archivo a partir del byte 8 
-8 - 11 "WAVE" 
-Formato 
- 12 - 15 "fmt " 
- 16 - 19 Tamaño del chunk de formato (16 bytes) 
- 20 - 21 Formato de audio: 1 = sin compresión
- 22 - 23 cc = cantidad de canales: 1 = Mono 
- 24 - 27 mps = muestras por segundo (4to parámetro) 
- 28 - 31 br = byte rate = mps * cc * bpm / 8 
- 32 - 33 ba = block align = cc * bpm / 8 
- 34 - 35 bpm = bits por muestra: 8, 16 o 32 (3er param) 
-Datos 
-4 36 - 39 "data" 4 40 - 43 Tamaño del chunk de datos = n n 44 - Muestras */
- 
-
 int main(int argc, char* argv[]){
-	int cantidas_bits;
+	if(argv[5]!=8 || argv[5]!=16 || argv[5]!=32){
+		cout<<"cantidad de bits ingresados incorrecto"<<endl;
+		return 0;
+	}
+	if(argv[6]<MUESTRAS_MIN){
+		cout<<"por favor ingrese una cantidad de muestras por minuto mayor a 8000"<<endl;
+		return 0;
+	}
+	
+	ifstream archivo_notas(argv[3]);
+	if(!archivo_notas){
+		cout<<"error al abrir el archivo de notas"<<endl;
+	}
+	
+	int cantidad_bits;
 	int ciclos; //cantidad de muestras por segundo
 	int duracion_melodia;
 	int duracion_nota
@@ -136,31 +109,67 @@ int main(int argc, char* argv[]){
 	string tono_actual;
 	
 	int canal = 1;
+	cantidad_bits =[5];
+	ciclos = argv[6];
+/*
+4 - 7 TamaÃ±o del archivo a partir del byte 8 
+8 - 11 "WAVE" 
+Formato 
+ 12 - 15 "fmt " 
+ 16 - 19 TamaÃ±o del chunk de formato (16 bytes) 
+ 20 - 21 Formato de audio: 1 = sin compresiÃ³n
+ 22 - 23 cc = cantidad de canales: 1 = Mono 
+ 24 - 27 mps = muestras por segundo (4to parÃ¡metro) 
+ 28 - 31 br = byte rate = mps * cc * bpm / 8 
+ 32 - 33 ba = block align = cc * bpm / 8 
+ 34 - 35 bpm = bits por muestra: 8, 16 o 32 (3er param) 
+Datos 
+4 36 - 39 "data" 4 40 - 43 TamaÃ±o del chunk de datos = n n 44 - Muestras */
 	
-	
-	ifstream archivo_notas(argv[3]);
-	if(!archivo_notas){
-		cout<<"error al abrir el archivo de notas"<<endl;
-	}
 	ofstream musica(argv[4],ios::binary);
+	char riff[4];
+	char fmt[4];
+	char wave[4];
+	char data[4];
+	strcpy(riff,"RIFF");
+	strcpy(fmt,"fmt ");
+	strcpy(wave,"WAVE");
+	strcpy(data,"data");
+	int formato_audio = 1;
+	int canales=1;
+	int byte_rate = (ciclos*canales*cantidad_bits)/8;
+	int block_align = (canales*cantidad_bits)/8
+	if(archivo.is_open()){
+		musica.write((char*)(&riff),4);
+		musica.write((char*)(&fmt),4);
+		musica.write((char*)(&wave),4);
+		musica.write((const char*)(&cantidad_bits),4);
+		musica.write((const char*)(&canales),1);
+		musica.write((const char*)(&formato_audio),1);
+		musica.write((const char*)(&ciclos),4);
+		musica.write((const char*)(&byte_rate),4);
+		musica.write((const char*)(&block_align),1);
+		musica.write((const char*)(&cantidad_bits),4);
+		musica.write((char*)(&data),4);
+			
+	}
+		
+		
 	if(archivo_notas.is_open()){
 		archivo_notas>>duracion_melodia;
-		while(!archivo_notas.eof()){
+		while(!archivo_notas.eof() && i<ciclos){
 			archivo_notas>>tono_actual;
 			archivo_notas>>duracion_melodia;
 			frecuencia_nota=encontrar_frecuencia(tono_actual);
-			funcion = AMPLITUD*sin(frecuencia_nota*2*PI+c)+d;
-			write()
+			funcion = AMPLITUD*sin(frecuencia_nota*2*PI*(i/ciclos));
+			musica.write(&funcion,sizeof(funcion));
+		}
 	}
 //F(X)=AMPLITUD * (bx+c)+d
 // c = muestra anterior
 //c = ((arcs(y - D/A)/2pi)-C)/FRECUENCIA
 	
-	if(musica.is_open()){
-		musica>>duracion_melodia;
-		while(!musica.eof()){
-			
-		}
-	}
+	archivo_notas.close();
 	musica.close();
+	return 0;
 }
