@@ -1,0 +1,23 @@
+# depslib dependency file v1.0
+1555914529 source:c:\users\rodolfo\desktop\supermercado\supermercado\src\chango.cpp
+	"Chango.h"
+
+1555914600 c:\users\rodolfo\desktop\supermercado\supermercado\include\chango.h
+	"producto.h"
+
+1555914748 c:\users\rodolfo\desktop\supermercado\supermercado\include\producto.h
+	<string>
+
+1555893803 source:c:\users\rodolfo\desktop\supermercado\supermercado\src\producto.cpp
+	"Producto.h"
+
+1555913668 source:c:\users\rodolfo\desktop\supermercado\supermercado\main.cpp
+	<iostream>
+	"Chango.h"
+	"Gondola.h"
+	"producto.h"
+
+1555915459 c:\users\rodolfo\desktop\supermercado\supermercado\include\gondola.h
+	"producto.h"
+	<fstream>
+
