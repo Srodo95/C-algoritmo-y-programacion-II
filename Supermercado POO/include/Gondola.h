@@ -8,7 +8,7 @@ class Gondola
 {
 
     private:
-        Producto *productos = new Producto[50];
+        Producto *productos; //= new Producto[50];
         int cantidad;
     public:
         void cargar_gondola(string nombre_archivo);

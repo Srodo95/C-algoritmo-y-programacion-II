@@ -2,6 +2,7 @@
 #include <fstream>
 
 Gondola::Gondola(){
+    productos = new Producto[50];
     cantidad = 0;
 }
 
