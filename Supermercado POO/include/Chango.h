@@ -5,21 +5,20 @@
 class Chango
 {
     private:
-        Producto* productos = new Producto[50];
+        Producto* productos;
         int cantidad;
-        int opcion;
-        int total_compra=0;
-        int total_ahorro=0;
+        int total_compra;
+        int total_ahorro;
     public:
-        void cargar_chango();
+        void agregar_producto(Producto producto);
         void mostrar_ofertas();
         int get_cantidad();
         int get_opcion();
         int get_total_compra();
         int get_total_ahorro();
-        //void ejecutar_opcion(opcion);
         //Producto pedir_nuevo_producto();
         Chango();
+
 
 };
 

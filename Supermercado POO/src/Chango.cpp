@@ -1,16 +1,16 @@
 #include "Chango.h"
 
 Chango::Chango(){
+    productos = new Producto[50];
     cantidad = 0;
+    total_compra;
+    total_ahorro;
 }
 
 int Chango::get_cantidad(){
     return cantidad;
 }
 
-int Chango::get_opcion(){
-    return opcion;
-}
 
 int Chango::get_total_compra(){
     return total_compra;
@@ -19,6 +19,10 @@ int Chango::get_total_compra(){
 int Chango::get_total_ahorro(){
     return total_ahorro;
 }
+
+//void Gondola::agregar_producto(Producto producto){
+//
+//}
 
 /*Producto pedir_nuevo_producto(){
 	string nombre,codigo;

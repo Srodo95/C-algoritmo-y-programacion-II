@@ -27,17 +27,18 @@
 	"Gondola.h"
 	"producto.h"
 
-1555914600 c:\users\rodolfo\desktop\supermercado\supermercado poo\include\chango.h
+1556214939 c:\users\rodolfo\desktop\supermercado\supermercado poo\include\chango.h
 	"producto.h"
 
-1555914748 c:\users\rodolfo\desktop\supermercado\supermercado poo\include\producto.h
+1556214397 c:\users\rodolfo\desktop\supermercado\supermercado poo\include\producto.h
 	<string>
 
-1556071086 c:\users\rodolfo\desktop\supermercado\supermercado poo\include\gondola.h
+1556214650 c:\users\rodolfo\desktop\supermercado\supermercado poo\include\gondola.h
 	"producto.h"
 	<fstream>
+	<iostream>
 
-1555914529 source:c:\users\rodolfo\desktop\supermercado\supermercado poo\src\chango.cpp
+1556214956 source:c:\users\rodolfo\desktop\supermercado\supermercado poo\src\chango.cpp
 	"Chango.h"
 
 1555893803 source:c:\users\rodolfo\desktop\supermercado\supermercado poo\src\producto.cpp

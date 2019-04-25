@@ -8,7 +8,7 @@ class Producto
    private:
         string nombre;
         float precio;
-        double codigo;
+        long int codigo;
         bool oferta;
     public:
         Producto();
