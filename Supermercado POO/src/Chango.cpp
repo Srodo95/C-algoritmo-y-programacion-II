@@ -3,20 +3,15 @@
 Chango::Chango(){
     productos = new Producto[50];
     cantidad = 0;
-    total_compra;
-    total_ahorro;
+    monto = 0;
+    total_ahorro = 0;
 }
 
-int Chango::get_cantidad(){
-    return cantidad;
+int Chango::devolver_monto(){
+    return monto;
 }
 
-
-int Chango::get_total_compra(){
-    return total_compra;
-}
-
-int Chango::get_total_ahorro(){
+int Chango::devolver_total_ahorro(){
     return total_ahorro;
 }
 

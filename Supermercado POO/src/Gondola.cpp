@@ -22,18 +22,28 @@ void Gondola::cargar_gondola(string nombre_archivo){
       getline(datos,codigo,SEPARADOR);
       getline(datos,precio,SEPARADOR);
       getline(datos, oferta);
+      productos[i].set_nombre(nombre);
+      cout<<"PRODUCTO:  "<<productos[i].get_nombre()<<endl;
       productos[i].set_codigo(atol(codigo.c_str()));
       productos[i].set_precio(atof(precio.c_str()));
       productos[i].set_oferta(atoi(oferta.c_str()));
-      productos[i].set_nombre(nombre);
       cantidad++;
     }
     datos.close();
 }
 
 void Gondola::mostrar_gondola(){
+
     for(int i = 0; i<cantidad; i++){
-        cout<<productos[cantidad].get_nombre()<<", "<<productos[cantidad].get_codigo()<<", "<<productos[cantidad].get_precio()<<", "<<productos[cantidad].get_oferta()<<endl;
+        cout<<"Nombre: "<<productos[i].get_nombre()<<endl;
+		cout<<"Codigo de barra: "<<productos[i].get_codigo()<<endl;
+		cout<<"Precio: "<<productos[i].get_precio()<<endl;
+		if(productos[i].get_oferta() == true){
+			cout<<"Oferta: si"<<endl;
+		}else{
+			cout<<"Oferta: no"<<endl;
+		}
+		cout<<endl;
     }
 }
 

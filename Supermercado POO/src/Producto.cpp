@@ -5,7 +5,7 @@ Producto::Producto()
     //ctor
 }
 
-double Producto::get_codigo(){
+long int Producto::get_codigo(){
     return codigo;
 }
 
@@ -25,7 +25,7 @@ void Producto::set_precio(float precio){
     this->precio = precio;
 }
 
-void Producto::set_codigo(double codigo){
+void Producto::set_codigo(long int codigo){
     this->codigo = codigo;
 }
 

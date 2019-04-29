@@ -21,26 +21,31 @@
 	"producto.h"
 	<fstream>
 
-1555915662 source:c:\users\rodolfo\desktop\supermercado\supermercado poo\main.cpp
+1556236144 source:c:\users\rodolfo\desktop\supermercado\supermercado poo\main.cpp
 	<iostream>
 	"Chango.h"
 	"Gondola.h"
 	"producto.h"
 
-1556214939 c:\users\rodolfo\desktop\supermercado\supermercado poo\include\chango.h
+1556234516 c:\users\rodolfo\desktop\supermercado\supermercado poo\include\chango.h
 	"producto.h"
 
-1556214397 c:\users\rodolfo\desktop\supermercado\supermercado poo\include\producto.h
+1556216681 c:\users\rodolfo\desktop\supermercado\supermercado poo\include\producto.h
 	<string>
 
-1556214650 c:\users\rodolfo\desktop\supermercado\supermercado poo\include\gondola.h
+1556238384 c:\users\rodolfo\desktop\supermercado\supermercado poo\include\gondola.h
 	"producto.h"
 	<fstream>
 	<iostream>
 
-1556214956 source:c:\users\rodolfo\desktop\supermercado\supermercado poo\src\chango.cpp
+1556234573 source:c:\users\rodolfo\desktop\supermercado\supermercado poo\src\chango.cpp
 	"Chango.h"
 
-1555893803 source:c:\users\rodolfo\desktop\supermercado\supermercado poo\src\producto.cpp
+1556216665 source:c:\users\rodolfo\desktop\supermercado\supermercado poo\src\producto.cpp
 	"Producto.h"
+
+1556238294 source:c:\users\rodolfo\desktop\supermercado\supermercado poo\src\gondola.cpp
+	"Gondola.h"
+	<fstream>
+	<cstdlib>
 

@@ -18,11 +18,14 @@ void imprimir_menu(){
 
 int main()
 {
+    int opcion;
     Chango chango;
     Gondola gondola;
     gondola.cargar_gondola("productos.txt");
     imprimir_menu();
     gondola.mostrar_gondola();
+    cout<<"ingrese una opcion a elegir"<<endl;
+    cin>>opcion;
     //gondola.cerrar_archivo("productos.txt");
 
 

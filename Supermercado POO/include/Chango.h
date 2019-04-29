@@ -7,16 +7,15 @@ class Chango
     private:
         Producto* productos;
         int cantidad;
-        int total_compra;
+        int monto;
         int total_ahorro;
     public:
         void agregar_producto(Producto producto);
         void mostrar_ofertas();
-        int get_cantidad();
-        int get_opcion();
-        int get_total_compra();
-        int get_total_ahorro();
-        //Producto pedir_nuevo_producto();
+        int devolver_cantidad();
+        int devolver_monto();
+        int devolver_total_ahorro();
+
         Chango();
 
 
