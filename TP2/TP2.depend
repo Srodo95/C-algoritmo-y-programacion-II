@@ -1,0 +1,31 @@
+# depslib dependency file v1.0
+1557772032 source:c:\users\rodolfo\desktop\tp2\main.cpp
+	<iostream>
+
+1557418972 source:c:\users\rodolfo\desktop\tp2\src\consultor.cpp
+	"Consultor.h"
+
+1557418972 c:\users\rodolfo\desktop\tp2\include\consultor.h
+
+1557418984 source:c:\users\rodolfo\desktop\tp2\src\empleado.cpp
+	"Empleado.h"
+
+1557418984 c:\users\rodolfo\desktop\tp2\include\empleado.h
+
+1557419008 source:c:\users\rodolfo\desktop\tp2\src\jornalero.cpp
+	"Jornalero.h"
+
+1557419008 c:\users\rodolfo\desktop\tp2\include\jornalero.h
+
+1557421707 source:c:\users\rodolfo\desktop\tp2\src\nodo.cpp
+	"Nodo.h"
+
+1557718494 c:\users\rodolfo\desktop\tp2\include\nodo.h
+	"Trabajador.h"
+
+1557709131 c:\users\rodolfo\desktop\tp2\include\trabajador.h
+	<string>
+
+1557418935 source:c:\users\rodolfo\desktop\tp2\src\trabajador.cpp
+	"Trabajador.h"
+
